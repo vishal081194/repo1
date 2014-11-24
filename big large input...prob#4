@@ -1,0 +1,16 @@
+public static void main(String args[]){
+  int input[] = new int[ /* pick a size */ ];
+  input[0] = /* fill the array */
+  int[] isDuplicate = new int[32000 >> 5]; // divide by 32
+        int wordNumber, mask;
+ 
+        for(int i = 0; i < input.length; i++ ){
+                mask = 1 << (input[i]%32);
+                wordNumber = input[i]/32;
+                if((mask & isDuplicate[wordNumber]) != 0){
+                        System.out.println(input[i]);
+                }else{
+                        isDuplicate[wordNumber] |= mask;
+                }
+        }
+}
